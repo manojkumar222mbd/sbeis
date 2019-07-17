@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
 export class ProductComponent implements OnInit {
   productArr=[];
   menuTitle="";
+  menuDesc="";
   constructor(router: Router) {
     let groundArr=[
       {name:'Black Papper',img:'assets/images/product/ground/black-pepper-powder.jpg'},
@@ -43,15 +44,28 @@ export class ProductComponent implements OnInit {
       if(router.url=="/product/ground"){
         this.menuTitle="Ground Spices";
         this.productArr=groundArr;
+		this.menuDesc=`Spices & herbs (eg., black pepper, turmeric, cinnamon) have been used by Indians for thousands of years for both culinary & health purposes. Unlike earlier times, spices today throughout the world are frequently used in almost every cuisine, largely to improve flavour and to provide new tastes.
+We at Prayansh from the start are focused on providing maximum flavour with minimum quantity.`;
       }else if(router.url=="/product/blend"){
-        this.menuTitle="Blend Spices";
+        this.menuTitle="Blended Spices";
         this.productArr=blendArr;
+		this.menuDesc=`Spices & herbs (eg., black pepper, turmeric, cinnamon) have been used by Indians for thousands of years for both culinary & health purposes. Unlike earlier times, spices today throughout the world are frequently used in almost every cuisine, largely to improve flavour & to provide new tastes.
+We at Prayansh from the start are focused on providing maximum flavour with minimum quantity.`;
       }else if(router.url=="/product/other"){
-        this.menuTitle="Other Product";
+        this.menuTitle="Flour";
         this.productArr=otherArr;
+		this.menuDesc=`In flour, we have three highly consumed flours namely, Wheat flour (Atta), All-purpose flour (Maida) and Gram flour (Besan). These have different usage in variety of cuisines globally.
+`;
+      }else if(router.url=="/product/dehyd"){
+        this.menuTitle="Dehydrated Vegetables";
+        this.productArr=otherArr;
+		this.menuDesc=`Our brand deals in exclusive and high quality Dehydrated vegetables, particularly Onions & Garlics..
+`;
       }else{
         this.menuTitle="Whole Spices";
         this.productArr=groundArr.concat(blendArr);
+		this.menuDesc=`Spices & herbs (eg., black pepper, turmeric, cinnamon) have been used by Indians for thousands of years for both culinary & health purposes. Unlike earlier times, spices today throughout the world are frequently used in almost every cuisine, largely to improve flavour and to provide new tastes.
+We at Prayansh from the start are focused on providing maximum flavour with minimum quantity.`;
       }
     }); 
   }
