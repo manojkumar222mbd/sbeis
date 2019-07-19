@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
+import { CommonService } from '../shared/common.service';
 
 @Component({
   selector: 'app-contact',
@@ -8,7 +9,7 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class ContactComponent implements OnInit {
   contact={name:'',mobile:'',email:'',message:''}
-  constructor(private toastr: ToastrService) { }
+  constructor(private toastr: ToastrService,private CommonService:CommonService) { }
 
   ngOnInit() {
   }
@@ -21,8 +22,12 @@ export class ContactComponent implements OnInit {
 	  }else if(!this.contact.mobile){
 		  return this.toastr.error('Mobile no. is Required');
 	  }
-	  this.toastr.success('Your message was sent successfully. Thanks.');
-	  
+	  this.CommonService.sendMail(this.contact).subscribe(result =>{
+		    console.log("Result",result);
+			this.toastr.success('Your message was sent successfully. Thanks.');
+	  },error=>{
+			this.toastr.error(error.error.message,'Error!');
+	  });
   }
 
 }

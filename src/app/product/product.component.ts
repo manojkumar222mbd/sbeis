@@ -40,6 +40,10 @@ export class ProductComponent implements OnInit {
       {name:'Wheat Flour',img:'assets/images/product/other/wheat-flour-atta.jpg'},
       {name:'Besan',img:'assets/images/product/other/besan-flour.jpg'}
     ];
+	let dehydArr=[
+      {name:'Garlic',img:'assets/images/product/dehyd/garlic-powder.jpg'}
+    ];
+	
     router.events.subscribe((url:any) => {
       if(router.url=="/product/ground"){
         this.menuTitle="Ground Spices";
@@ -58,7 +62,7 @@ We at Prayansh from the start are focused on providing maximum flavour with mini
 `;
       }else if(router.url=="/product/dehyd"){
         this.menuTitle="Dehydrated Vegetables";
-        this.productArr=otherArr;
+        this.productArr=dehydArr;
 		this.menuDesc=`Our brand deals in exclusive and high quality Dehydrated vegetables, particularly Onions & Garlics..
 `;
       }else{

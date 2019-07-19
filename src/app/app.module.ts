@@ -3,7 +3,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { ToastrModule } from 'ngx-toastr';
 import { FormsModule } from '@angular/forms';
-
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './common/header/header.component';
@@ -29,6 +29,7 @@ import { ClientComponent } from './client/client.component';
     BrowserModule,
     AppRoutingModule,
 	FormsModule,
+	HttpClientModule,
 	BrowserAnimationsModule,
 	ToastrModule.forRoot({
 		timeOut:3000,
