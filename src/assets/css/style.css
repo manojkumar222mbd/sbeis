@@ -12,9 +12,9 @@
 /*	     01 - General & Basic Styles
 /*------------------------------------------*/
 body {
-	font-family: Arial, Helvetica, sans-serif;
+	font-family:'Open Sans', sans-serif;
 	font-size: 14px;
-    line-height: 21px;
+    line-height: 2;
 	font-weight: 500;
 	color:  #515151;
 	background: url(../images/patterns/4.png)repeat;
@@ -89,10 +89,10 @@ h6 {
 }
 
 p {
-    color: #888;
-    font-size: 13px;
+    color: #515151;
+    font-size: 14px;
     font-family: 'Open Sans', sans-serif;
-    line-height: 22px;
+    line-height: 2;
     margin: 0;
 }
 
@@ -5384,4 +5384,8 @@ ul.footer-nav li a:hover {
 
 .navbar-collapse {
 	max-height: 340px;
+}
+
+.company-color{
+	color:#F69E25;
 }

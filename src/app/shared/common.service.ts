@@ -11,8 +11,10 @@ export class CommonService {
   constructor(private http:HttpClient) { }
   
 	sendMail(data:any): Observable<any> {
-	  const httpOptions = {headers: new HttpHeaders({'Content-Type':  'application/json',})};
-	  return this.http.post<any>(this.ApiBaseUrl+'/api/mail.php', data, httpOptions)
+	  const senddata = new FormData();
+      senddata.append('data', JSON.stringify(data));
+	  const httpOptions = {headers: new HttpHeaders()};
+	  return this.http.post<any>(this.ApiBaseUrl+'/api/mail.php', senddata, httpOptions)
 		.pipe(
 		);
 	}

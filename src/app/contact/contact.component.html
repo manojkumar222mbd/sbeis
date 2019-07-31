@@ -47,7 +47,8 @@
                 <label for="message">Write Your Comment</label>
                 <span class="message-missing">Say something!</span>
                 <textarea id="message" [(ngModel)]="contact.message" name="message" cols="45" rows="10"></textarea>
-                <button class="btn btn-warning" (click)="onSubmit()"> Submit</button>
+                <button class="btn btn-warning" (click)="onSubmit()" *ngIf="!isSent"> Submit</button>
+				<button class="btn btn-warning" disabled="true" *ngIf="isSent" > Sending...</button>
               </div>
             </div>
         </div>
